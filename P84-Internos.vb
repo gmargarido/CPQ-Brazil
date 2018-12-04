@@ -1,4 +1,4 @@
-Sub Internos
+Sub Internos(item_partnumber as String)
 	Dim var as String
 	
 	If CheckType(item_partnumber) =  "Knife Valv" Then

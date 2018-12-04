@@ -10,12 +10,13 @@ Sub Model(item_partnumber as String)
 			var = Right(item_partnumber,3)
 		End If
 	ElseIf CheckType(item_partnumber) = "Butterfly Valve" Then
-		trilok = select TRILOK from /* MATERIAL_BORBOLETA */ where Right(Modelo,Len(modelo)-1) = Serie(item_partnumber)
+		trilok = select TRILOK from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)
 		
 		If trilok = true Then
 			var = "Trilok"
 		Else
-			var = "S" + Serie(item_partnumber) 'Sub Function
+			var = "S" + Serie(item_partnumber)
+		End If
 	Else
 		'Es necesario utilizar la query abajo en la tabla Celdas B3:M943 
 		modelo = Select MODELO from /* Tabla */ where Serie = Serie(item_partnumber) and Base = BaseNumber(item_partnumber)
