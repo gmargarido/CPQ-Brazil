@@ -8,7 +8,7 @@ Sub NormaConexoes(item_partnumber as String)
 		If Diametro(item_partnumber) > "2400"
 			var = select "Norma das Conexões > DN 24" from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)
 		Else
-			var = var = select "Norma das Conexões" from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)
+			var = select "Norma das Conexões" from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)
 		End If
 	Else
 		'Es necesario utilizar la query abajo en la tabla Celdas B3:M943 
