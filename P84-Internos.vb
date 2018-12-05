@@ -27,6 +27,8 @@ Sub Internos(item_partnumber as String)
 			var = Corpo(item_partnumber) + BallMaterial(item_partnumber) + SeatMaterial(item_partnumber) + GasketMaterial(item_partnumber)
 		EndIf
 	End If
+	
+	Internos = var
 End Sub
 
 Public Function BallMaterial(item_partnumber as String)
