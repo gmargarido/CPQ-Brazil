@@ -1,4 +1,4 @@
-Sub Parafusos(item_partnumber as String)
+Sub Porcas(item_partnumber as String)
 	Dim var as String
 	
 	If CheckType(item_partnumber) = "Knife Valve" Then
