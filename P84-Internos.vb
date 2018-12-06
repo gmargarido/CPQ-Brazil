@@ -16,7 +16,7 @@ Sub Internos(item_partnumber as String)
 		ElseIf Len(item_partnumber) = 20
 			var = Mid(item_partnumber,13,3)
 		End If
-	ElseIf CheckType(item_partnumber) =  "Butterfly Valv" Then
+	ElseIf CheckType(item_partnumber) = "Butterfly Valve" Then
 		var = Right(item_partnumber,3)
 	Else
 		If Serie(item_partnumber) = "19"

@@ -9,7 +9,7 @@ Sub GaxetaVedSup(item_partnumber as String)
 		var = Select "Gaxeta" from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)
 	ElseIf Serie(item_partnumber) = "19"
 		'Tabla INTERNOS_S19 - Oja "Dados" > EL1:EW26
-		var = Select "Gasket" from /* INTERNOS_S19 */ where = Mid(Internos(item_partnumber),2,3)
+		var = Select "Gasket" from /* INTERNOS_S19 */ where TRIM S19 = Mid(Internos(item_partnumber),2,3)
 	ElseIf Serie(item_partnumber) = "1A"
 		'Tabla GAXETA_1A - Oja "Dados" > EL1:EW26
 		var = Select "Material" from /* GAXETA_1A */ where Gaxeta = GasketMaterial(item_partnumber)
