@@ -20,26 +20,26 @@ Sub Internos(item_partnumber as String)
 		var = Right(item_partnumber,3)
 	Else
 		If Serie(item_partnumber) = "19"
-			var = Corpo(item_partnumber) + BallMaterial(item_partnumber) + StemMaterial(item_partnumber) + SeatMaterial(item_partnumber)
+			var = TrimCorpo(item_partnumber) + TrimEsfera(item_partnumber) + TrimHaste(item_partnumber) + TrimSede(item_partnumber)
 		ElseIf Serie(item_partnumber) = "1A"
-			var = Corpo(item_partnumber) + BallMaterial(item_partnumber) + StemMaterial(item_partnumber) + SeatMaterial(item_partnumber) + SealMaterial(item_partnumber) + GasketMaterial(item_partnumber) + ORingMaterial(item_partnumber)
+			var = TrimCorpo(item_partnumber) + TrimEsfera(item_partnumber) + TrimHaste(item_partnumber) + TrimSede(item_partnumber) + TrimVedacao(item_partnumber) + TrimGaxeta(item_partnumber) + TrimORing(item_partnumber)
 		Else
-			var = Corpo(item_partnumber) + BallMaterial(item_partnumber) + SeatMaterial(item_partnumber) + GasketMaterial(item_partnumber)
+			var = TrimCorpo(item_partnumber) + TrimEsfera(item_partnumber) + TrimSede(item_partnumber) + TrimGaxeta(item_partnumber)
 		EndIf
 	End If
 	
 	Internos = var
 End Sub
 
-Public Function BallMaterial(item_partnumber as String)
+Public Function TrimEsfera(item_partnumber as String)
 	Dim var as String
 	
 	var = Mid(item_partnumber,14,1)
 
-	BallMaterial = var
+	TrimEsfera = var
 End Function
 
-Public Function StemMaterial(item_partnumber as String)
+Public Function TrimHaste(item_partnumber as String)
 	Dim var as String
 	
 	If Serie(item_partnumber) = "19" Or Serie(item_partnumber) = "1A"
@@ -48,10 +48,10 @@ Public Function StemMaterial(item_partnumber as String)
 		var = Mid(item_partnumber,14,1)
 	End If
 
-	SeatMaterial = var
+	TrimHaste = var
 End Function
 
-Public Function SeatMaterial(item_partnumber as String)
+Public Function TrimSede(item_partnumber as String)
 	Dim var as String
 	
 	If Serie(item_partnumber) = "19" Or Serie(item_partnumber) = "1A"
@@ -60,10 +60,10 @@ Public Function SeatMaterial(item_partnumber as String)
 		var = Mid(item_partnumber,15,1)
 	End If
 
-	SeatMaterial = var
+	TrimSede = var
 End Function
 
-Public Function SealMaterial(item_partnumber as String)
+Public Function TrimVedacao(item_partnumber as String)
 	Dim var as String
 	
 	If Serie(item_partnumber) = "1A"
@@ -72,10 +72,10 @@ Public Function SealMaterial(item_partnumber as String)
 		var = 0
 	End If
 
-	BallMaterial = var
+	TrimEsfera = var
 End Function
 
-Public Function GasketMaterial(item_partnumber as String)
+Public Function TrimGaxeta(item_partnumber as String)
 	Dim var as String
 	
 	If CheckType(item_partnumber) =  "Butterfly Valv" Then
@@ -86,10 +86,10 @@ Public Function GasketMaterial(item_partnumber as String)
 		var = Mid(item_partnumber,16,1)
 	End If
 	
-	GasketMaterial = var
+	TrimGaxeta = var
 End Function
 
-Public Function ORingMaterial(item_partnumber as String)
+Public Function TrimORing(item_partnumber as String)
 	Dim var as String
 	
 	If Serie(item_partnumber) = "1A"
@@ -98,5 +98,5 @@ Public Function ORingMaterial(item_partnumber as String)
 		var = 0
 	End If
 
-	BallMaterial = var
+	TrimORing = var
 End Function

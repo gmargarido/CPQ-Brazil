@@ -3,7 +3,7 @@ Sub NormaConexoes(item_partnumber as String)
 	
 	If CheckType(item_partnumber) = "Knife Valve" Then
 		'Es necesario utilizar la query abajo en la tabla CORPO2_GUILHOTINA - Celdas IA1:IF44
-		var = Select "Norma de Furacao" from /* CORPO2_GUILHOTINA */ where Trim Code = Corpo(item_partnumber)
+		var = Select "Norma de Furacao" from /* CORPO2_GUILHOTINA */ where Trim Code = TrimCorpo(item_partnumber)
 	ElseIf CheckType(item_partnumber) = "Butterfly Valve" Then
 		If Diametro(item_partnumber) > "2400"
 			var = select "Norma das Conexões > DN 24" from /* MATERIAL_BORBOLETA */ where Modelo = Serie(item_partnumber)

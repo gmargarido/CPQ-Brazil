@@ -21,7 +21,7 @@ Sub Model(item_partnumber as String)
 		'Es necesario utilizar la query abajo en la tabla Celdas B3:M943 
 		modelo = Select MODELO from /* Tabla */ where Serie = Serie(item_partnumber) and Base = BaseNumber(item_partnumber)
 		If modelo = "S7000/S8000"
-			If Corpo(item_partnumber) = "C"
+			If TrimCorpo(item_partnumber) = "C"
 				var = "S8000"
 			Else
 				var = "S7000"
@@ -87,7 +87,7 @@ Public Function Serie(item_partnumber as String)
 	
 End Function
 
-Public Function Corpo(item_partnumber as String)
+Public Function TrimCorpo(item_partnumber as String)
 	Dim var as String
 	
 	If Item = "Knife Valve" Then
