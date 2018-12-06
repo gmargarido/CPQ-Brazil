@@ -1,10 +1,10 @@
 Sub Internos(item_partnumber as String)
 	Dim var as String
 	
-	If CheckType(item_partnumber) =  "Knife Valv" Then
+	If CheckType(item_partnumber) =  "Knife Valve" Then
 		'No se aplica a la valvula de tipo Knife.
 		var = ""
-	ElseIf CheckType(item_partnumber) =  "Check Valv" Then
+	ElseIf CheckType(item_partnumber) =  "Check Valve" Then
 		If Len(item_partnumber) = 18
 			var = Mid(item_partnumber,12,3)
 		ElseIf Len(item_partnumber) = 19
