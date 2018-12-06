@@ -1,4 +1,4 @@
-Sub MaterialEixoHaste(item_partnumber as String)
+Sub MaterialEixoHaste(item_partnumber as String, actuator_partnumber as String)
 	Dim var as String
 	Dim Atuador as String
 	
