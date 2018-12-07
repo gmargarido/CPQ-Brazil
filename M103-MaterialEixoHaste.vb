@@ -9,10 +9,10 @@ Sub MaterialEixoHaste(item_partnumber as String, actuator_partnumber as String)
 			var = "DEFINIR"
 		ElseIf Left(Atuador,1) = "C"
 			'Es necesario utilizar la query abajo en la tabla HASTE_GUILHOTINA - Celdas IV1:IZ91
-			var = Select "Material Haste" from /* HASTE_GUILHOTINA */ where = Mid(Atuador,2,3)
+			var = Select "Material Haste" from /* HASTE_GUILHOTINA */ where Code = Mid(Atuador,2,3)
 		Else
 			'Es necesario utilizar la query abajo en la tabla MAT_ACIONAMENTO_GUILHOTINA - Celdas IN1:IT13
-			var = Select "Haste" from /* MAT_ACIONAMENTO_GUILHOTINA */ where = Mid(Atuador,2,3)
+			var = Select "Haste" from /* MAT_ACIONAMENTO_GUILHOTINA */ where Trim Code = Mid(Atuador,2,3)
 		EndIf
 	ElseIf CheckType(item_partnumber) = "Butterfly Valve" Then
 		'Es necesario utilizar la query abajo en la tabla TRIM_BORBOLETA - Celdas FJ1:FP3478
@@ -39,6 +39,8 @@ Public Function TrimAtuador(item_partnumber as String, actuator_partnumber as St
 		Else
 			var = Mid(actuator_partnumber,14,5)
 		End If
+	ElseIf CheckType(item_partnumber) =  "Butterfly Valve" Then	
+		var = Right(item_partnumber,8)
 	Else
 		var = Mid(actuator_partnumber,3,3)
 	End If

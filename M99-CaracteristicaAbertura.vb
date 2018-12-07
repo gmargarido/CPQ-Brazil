@@ -8,7 +8,7 @@ Sub CaracteristicaAbertura(item_partnumber as String)
 		If item_partnumber.accionamiento = "CONTROLE"
 			var = "=%"
 		Else	
-			var = "item_partnumber.accionamiento"
+			var = item_partnumber.accionamiento
 		End If
 	ElseIf CheckType(item_partnumber) = "Check Valve" Then
 		If Right(Passagem(item_partnumber),3) = "15º" Or Right(Passagem(item_partnumber),3) = "30º" Or Passagem(item_partnumber)= "SLOTTED" Then
