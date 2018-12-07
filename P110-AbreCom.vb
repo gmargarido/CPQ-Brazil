@@ -24,6 +24,6 @@ Sub AbreCom(item_partnumber as String,actuator_partnumber as String)
 		var = ""
 	End If
 	
-	FechaCom = var
+	AbreCom = var
 
 End Sub
