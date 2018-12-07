@@ -10,9 +10,9 @@ Sub TipoAtuador(item_partnumber as String,actuator_partnumber as String)
 	ElseIf CheckType(item_partnumber) = "Butterfly Valve" Then
 		If AtuadorAcion(Atuador) = "BFA" Or Left(Atuador,2) = "01"
 			var = "ALAVANCA"
-		ElseIf AtuadorAcion(Atuador) = "BFC" Or Left(Atuador,2) = "04"
+		ElseIf AtuadorAcion(Atuador) = "BFC" Or Left(Atuador,2) = "04"  Then
 			var = "CAIXA DE REDUÇÃO"
-		ElseIf CaracteristicaAbertura(item_partnumber) = "ON-OFF" Or CaracteristicaAbertura(item_partnumber) = "=%"
+		ElseIf CaracteristicaAbertura(item_partnumber) = "ON-OFF" Or CaracteristicaAbertura(item_partnumber) = "=%"  Then
 			var = "PINHÃO CREMALHEIRA"
 		Else
 			var = "-"
