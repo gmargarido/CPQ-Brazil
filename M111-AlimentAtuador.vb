@@ -6,7 +6,7 @@ Sub AlimentAtuador(item_partnumber as String,actuator_partnumber as String)
 	
 	If CheckType(item_partnumber) =  "Knife Valve" Then
 		If Left(Atuador,1) = "C"
-			var = Suprimento de ar. 'Este campo aún no se ha creado.
+			var = "80 PSI" 'Este campo aún no se ha creado, pero el valor puede ser fijo con "80 PSI"
 		Else
 			var = "-"
 		End If
@@ -16,7 +16,7 @@ Sub AlimentAtuador(item_partnumber as String,actuator_partnumber as String)
 		ElseIf item_partnumber.accionamiento = "MANUAL" Then
 			var = "-"
 		Else
-			var = Suprimento de ar. 'Este campo aún no se ha creado.
+			var = "80 PSI" 'Este campo aún no se ha creado, pero el valor puede ser fijo con "80 PSI"
 		End If	
 	End If
 End Sub
