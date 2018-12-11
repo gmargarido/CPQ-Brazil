@@ -16,7 +16,7 @@ Sub MaterialSede(item_partnumber as String)
 			a = Select "Material" from /* SEDE_1A */ where SEDE = TrimSede(item_partnumber)
 			
 			'Tabla INSERTO_SEDE_1A	 - Oja "Dados" > DD1:DF25
-			b = Select "Vedação" from /* INSERTO_SEDE_1A */ where INSERTO SEDE = Mid(item_partnumber,17,1)
+			b = Select "Material" from /* INSERTO_SEDE_1A */ where INSERTO SEDE = Mid(item_partnumber,17,1)
 			
 			var = a + " / " + b
 		Else
