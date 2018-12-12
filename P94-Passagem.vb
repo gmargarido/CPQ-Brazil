@@ -52,8 +52,8 @@ End Function
 Public Function AcionamentoEsfera(item_partnumber as String)
 	Dim var as String
 	
-	If Serie(item_partnumber) = "1A"
-		var = Mid(item_partnumber,25,4)
+	If Serie(item_partnumber) <> "1A"
+		var = Mid(item_partnumber,18,2)
 	End If
 	
 	Acionamento = var
