@@ -81,9 +81,9 @@ Public Function Serie(item_partnumber as String)
 		ElseIf Right(item_partnumber,3) = "3JY" Or Right(item_partnumber,3) = "3RL"
 			var = Mid(item_partnumber,1,2) + "R"
 		ElseIf CheckType(item_partnumber) = "Ball Valve" Then
-			var = Mid(item_partnumber,1,2)				
+			var = "F" + Mid(item_partnumber,1,2)				
 		Else
-			var = "F" + Mid(item_partnumber,1,2)
+			var = Mid(item_partnumber,1,2)
 		End If
 	End If
 	
