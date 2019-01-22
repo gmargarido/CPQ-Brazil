@@ -17,7 +17,7 @@ Sub Model(item_partnumber as String)
 		Else
 			var = "S" + Serie(item_partnumber)
 		End If
-	Else
+	ElseIf CheckType(item_partnumber) = "Ball Valve" Then
 		'Es necesario utilizar la query abajo en la tabla Celdas B3:M943 
 		modelo = Select MODELO from /* Tabla */ where Serie = Serie(item_partnumber) and Base = BaseNumber(item_partnumber)
 		If modelo = "S7000/S8000"
@@ -26,6 +26,8 @@ Sub Model(item_partnumber as String)
 			Else
 				var = "S7000"
 			End If
+		ElseIf 
+			var = Serie(item_partnumber) 		
 		End If
 	End If
 	
@@ -78,8 +80,10 @@ Public Function Serie(item_partnumber as String)
 			var = Mid(item_partnumber,1,2) + "H"
 		ElseIf Right(item_partnumber,3) = "3JY" Or Right(item_partnumber,3) = "3RL"
 			var = Mid(item_partnumber,1,2) + "R"
+		ElseIf CheckType(item_partnumber) = "Ball Valve" Then
+			var = Mid(item_partnumber,1,2)				
 		Else
-			var = Mid(item_partnumber,1,2)
+			var = "F" + Mid(item_partnumber,1,2)
 		End If
 	End If
 	
